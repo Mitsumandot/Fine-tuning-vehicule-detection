@@ -1,6 +1,6 @@
 import cv2 as cv
 import os
-class_id = 2 
+class_id = 0
 
 
 with open('gt10913.txt', "r") as f:
@@ -45,7 +45,7 @@ with open('gt10913.txt', "r") as f:
 
             yolo_lines.append(f"{class_id} {x_center:.6f} {y_center:.6f} {w:.6f} {h:.6f}")
 
-        with open(os.path.join("dataset/labels/train", f"{img_number}.txt"), "w") as out:
+        with open(os.path.join("dataset/labels/train", f"img_{img_number}.txt"), "w") as out:
             out.write("\n".join(yolo_lines))
 
 
